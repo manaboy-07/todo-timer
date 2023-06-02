@@ -39,7 +39,7 @@ function App() {
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (edit) {
-      if (editText != "") {
+      if (editText !=="") {
         let tempTodo = todos.map((todo) => {
           return todo.id === id ? { ...todo, text: editText } : todo;
         });

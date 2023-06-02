@@ -5,7 +5,7 @@ import React from "react";
 function Todo({ edit, inputValue, handleInput, handleAddTodo }) {
   return (
     <div>
-      <form onSubmit={handleAddTodo}>
+      <form onSubmit={handleAddTodo} className="">
         <div className='todo-name flex flex-col items-center justify-center'>
           <div className='my-4'>
             <label
