@@ -52,7 +52,7 @@ function App() {
         return
       }
     } else {
-      if (inputValue.trim() !== "") {
+      if (inputValue !== "") {
         const newTodo = {
           completed,
           text: inputValue,
@@ -62,6 +62,12 @@ function App() {
         //adding list and updating localstorage
         setAndSaveItems(todoLists);
         setInputValue("");
+      }else{
+        handleAlert({
+          type: "danger",
+          text: "field can't be empty ",
+        });
+        return
       }
       handleAlert({
         type: "success",
