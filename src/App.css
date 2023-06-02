@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
-}
+/** @format */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.background {
+  width: 100%;
+  height: 40vh;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background: linear-gradient(
+      189deg,
+      rgba(20, 5, 69, 0.9),
+      rgba(72, 56, 149, 0.8)
+    ),
+    url(./Assets/background.jpeg) center no-repeat;
+  background-size: cover;
+  position: relative;
 }
+:root {
+  --primary: rgb(4, 180, 166);
+  --secondary: rgb(71, 1, 71);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  --birthday: var(--primary);
+
+  --shadow: 0 1px 3px rgba(255, 254, 254, 0.1);
+  --other-glow: 0px 0px 4px rgba(71, 1, 71, 0.6);
+  --birthday-glow: 0px 0px 4px rgba(4, 180, 166, 0.6);
+}
+/** ==== CUSTOM CHECKBOX ======**/
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  display: block;
+  width: 100px;
+  height: 60px;
+}
+.bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 2.1px solid var(--secondary);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--other-glow);
+}
+.bubble.birthday {
+  border-color: var(--birthday);
+  box-shadow: var(--birthday-glow);
+}
+.bubble::after {
+  content: "";
+  height: 0;
+  opacity: 0;
+  display: block;
+  box-shadow: var(--other-glow);
+  width: 0;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.bubble.birthday::after {
+  background-color: var(--birthday);
+  box-shadow: var(--birthday-glow);
+}
+input:checked ~ .bubble::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+/**====END CUSTOM CHECKBOX===== **/
+.strike {
+  text-decoration: line-through;
 }
+.input-field {
+  outline: none;
+  width: 180%;
+  height: 40px;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(218, 175, 6);
+}
+.input-field::placeholder {
+  color: azure;
+}
+.lists {
+  box-shadow: var(--shadow);
+}
+/* .alerts{
+  position: absolute;
+  top: 0;
+  width: 200px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+} */
+.alerts.alert-danger {
+  background-color: #dc2626;
+}
+.alerts.alert-success {
+  background-color: rgb(7, 180, 7);
+}
+.alerts.alert-warning {
+  background-color: rgb(218, 175, 6);
+}
+.my-modal {
+  position: fixed;
+  top: 40%;
+  z-index: 99999;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.62);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+}
+.edit-input{
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid aliceblue;
+  outline: none;
+  background-color: transparent;
 }

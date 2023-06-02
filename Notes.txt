@@ -1,0 +1,14 @@
+Objectives for this project:
+it is a crud operation website
+it is a todo list with a twist,
+it has both a todo and a timer
+it has mode, the mode has categories
+e.g it has list or Reminders this will be like a tabs group with smooth animation
+now the reminders has categories i.e birthday or other
+when the time for it reaches an audio will be played and a bell icon will shake
+
+When we want to edit there will be a modal pop up, check MetaBnb project or expenses project
+
+Things to check on 
+1. How to use local storage in react
+2. How to build an amazing tab in react with smooth animation
