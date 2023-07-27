@@ -39,17 +39,17 @@ function App() {
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (edit) {
-      if (editText !=="") {
+      if (editText !== "") {
         let tempTodo = todos.map((todo) => {
           return todo.id === id ? { ...todo, text: editText } : todo;
         });
+        handleAlert({ type: "warning", text: "item has been edited" });
         setAndSaveItems(tempTodo);
         setEdit(false);
         setInputValue("");
-        handleAlert({ type: "warning", text: "item has been edited" });
       } else {
         handleAlert({ type: "danger", text: "items cant be empty" });
-        return
+        return;
       }
     } else {
       if (inputValue !== "") {
@@ -62,12 +62,12 @@ function App() {
         //adding list and updating localstorage
         setAndSaveItems(todoLists);
         setInputValue("");
-      }else{
+      } else {
         handleAlert({
           type: "danger",
           text: "field can't be empty ",
         });
-        return
+        return;
       }
       handleAlert({
         type: "success",
